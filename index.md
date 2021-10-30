@@ -1,3 +1,20 @@
+### CARREGAR UM ARQUIVO .XLSX OU .CSV E OBTER INFORMACOES GERAIS
+
+| Expressão | Ação |
+| --- | --- |
+| var_df =  pd.read_csv(‘arquivo.csv’) | Carregar arquivo .csv |
+|var_df = pd.read_excel(‘arquivo.xlsx’) | Carregar arquivo .xlsx |
+|var_df.head() | Mostrar n linhas do arquivo (padrão n = 5) |
+|var_df.tail() | Mostrar n últimas linhas do arquivo (padrão n = 5) |
+|var_df.shape | Quantidade de linhas e colunas (tupla) |
+|var_df.info() | Informações gerais como quantidade de dados não-nulos, tipos dos dados e memória ocupada |
+
+
+
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/alanhelfer/pandas/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
