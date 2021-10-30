@@ -11,6 +11,7 @@ Estilo: https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-ma
 |var_df.tail() | Mostrar n últimas linhas do arquivo (padrão n = 5) |
 |var_df.shape | Quantidade de linhas e colunas (tupla) |
 |var_df.info() | Informações gerais como quantidade de dados não-nulos, tipos dos dados e memória ocupada |
+| | |
 
 
 Observação:
