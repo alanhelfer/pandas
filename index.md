@@ -25,7 +25,7 @@ Observação:
 |var_df[‘nome_col’].value_counts() | Quantidade de vezes que cada dado aparece na coluna |
 
 ### Acessar elementos específicos:
-| Expressão | Ação |
+| Expressão | Ação | 
 | --- | --- |
 |var_df.describe() | Média, desvio padrão, mínimo, máximo e percentis por coluna numérica em Data Frame | 
 |var_df.isna().sum() | Quantidade de elementos nulos (missing) por coluna |
