@@ -27,6 +27,12 @@ Observação:
 ### Acessar elementos específicos:
 | Expressão | Ação |
 | --- | --- |
+|var_df.describe() | Média, desvio padrão, mínimo, máximo e percentis por coluna numérica em Data Frame | 
+|var_df.isna().sum() | Quantidade de elementos nulos (missing) por coluna |
+|var_df.isna().mean() | Média de elementos nulos (missing) por coluna | 
+|var_df[‘nome_col’].value_counts() | Quantidade de vezes que cada dado aparece na coluna |
+
+
 |var_df[linha_n:linha_p] | Elementos das linhas linha_n até a linha_p - 1 no formato Data Frame |
 |var_df[‘key’] | Elementos da coluna key no formato Series |
 |var_df[[‘key’]] | Elementos no formato Data Frame |
