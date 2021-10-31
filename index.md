@@ -86,7 +86,7 @@ var_df[‘nome_col’].fillna(‘novo_dado’)
 dados[‘Age’].fillna(dados[‘Age’].mean())
 ~~~
 
-### Sobrescrita de valores/informações no Data Frame ocorre com o parâmetro inplace = True. Se nesta condição, nada é retornado e os dados são modificados. Caso seja falso, é retornada uma cópia do objeto.
+#### Sobrescrita de valores/informações no Data Frame ocorre com o parâmetro inplace = True. Se nesta condição, nada é retornado e os dados são modificados. Caso seja falso, é retornada uma cópia do objeto.
 
 ~~~
 var_df.X(…, inplace = True) 
