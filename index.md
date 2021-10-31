@@ -47,7 +47,7 @@ var_df[var_df[‘Salario’] == var_df[‘Salario’].max()]
 |var_df.iloc[linha_n, coluna_p] | Elemento da linha n e coluna p |
 |var_df.iloc[lin_in:lin_fim, col_in:col_fim] | Forma completa da funcionalidade iloc[]. O retorno tem o formato Data Frame. Espaço vazio até inicio ou fim. |
 
-#### Acessar elementos específicos pelo label do index (da linha) com loc[]:
+### Acessar elementos específicos pelo label do index (da linha) com loc[]:
 
 | Expressão | Ação | 
 | --- | --- |
@@ -66,8 +66,8 @@ var_df.loc[var_df[‘Nome’] == ‘Alan’]
 ### Alteração/exclusão de valores/informações no Data Frame
 
 | Expressão | Ação |
-| --- | --- | 
-|var_df.rename(coluns={‘nome_1_ant’:’nome_1_novo’, ‘nome_2_ant’: …}) | Renomeia a coluna especificada para o termo depois dois dois pontos ( : ) | 
+| --- | --- |
+|var_df.rename(coluns={‘nome_1_ant’:’nome_1_novo’, ‘nome_2_ant’: …}) | Renomeia a coluna especificada para o termo depois dois dois pontos ( : ) |
 |var_df.drop(‘nome’, axis = 0_ou_1) | Remover a coluna especificada, se axis = 1, ou a linha, se axis = 0 | 
 |var_df.dropna() | Excluir linha que contenha qualquer valor nulo | 
 |var_df.fillna(‘termo_incluso’) | Substituir dados faltantes por termo_incluso |
