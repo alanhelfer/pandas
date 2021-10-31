@@ -44,8 +44,8 @@ var_df[var_df[‘Salario’] == var_df[‘Salario’].max()]
 | --- | --- | 
 |var_df.iloc[linha_n] | Elementos da linha n em formato Series do Pandas |
 |var_df.iloc[[linha_n]] | Elementos da linha n em formato Data Frame |
-|var_df.iloc[linha_n, coluna_p] |Elemento da linha n e coluna p |
-|var_df.iloc[lin_in:lin_fim, col_in:col_fim] |Forma completa da funcionalidade iloc[]. O retorno tem o formato Data Frame. Espaço vazio até inicio ou fim. |
+|var_df.iloc[linha_n, coluna_p] | Elemento da linha n e coluna p |
+|var_df.iloc[lin_in:lin_fim, col_in:col_fim] | Forma completa da funcionalidade iloc[]. O retorno tem o formato Data Frame. Espaço vazio até inicio ou fim. |
 
 #### Acessar elementos específicos pelo label do index (da linha) com loc[]:
 
