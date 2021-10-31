@@ -37,7 +37,9 @@ Observação:
 
 * É possível usar estrutura condicional em determinada coluna: 
 
+~~~
 var_df[var_df[‘Salario’] == var_df[‘Salario’].max()]
+~~~
 
 ### Acessar elementos específicos pelo index (índice numérico) com iloc[]:
 
@@ -61,8 +63,9 @@ var_df[var_df[‘Salario’] == var_df[‘Salario’].max()]
 Observação: 
 * É possível usar estrutura condicional em determinada coluna: 
 
+~~~
 var_df.loc[var_df[‘Nome’] == ‘Alan’]
-
+~~~
 
 ### Alteração/exclusão de valores/informações no Data Frame
 
@@ -75,15 +78,19 @@ var_df.loc[var_df[‘Nome’] == ‘Alan’]
 
 Observações:
 
-* É possível especificar as colunas para análise utilizando var_df.[‘nome_coluna’]. Por exemplo: 
+* É possível especificar as colunas para análise utilizando var_df.[‘nome_coluna’]. Por exemplo:
 
+~~~
 var_df[‘nome_col’].fillna(‘novo_dado’) 
 
 dados[‘Age’].fillna(dados[‘Age’].mean())
+~~~
 
 ### Sobrescrita de valores/informações no Data Frame ocorre com o parâmetro inplace = True. Se nesta condição, nada é retornado e os dados são modificados. Caso seja falso, é retornada uma cópia do objeto.
 
+~~~
 var_df.X(…, inplace = True) 
+~~~
 
 Substituir dados faltantes da coluna por novo_dado
 
