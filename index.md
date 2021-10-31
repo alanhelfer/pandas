@@ -3,14 +3,14 @@ Estilo: https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-ma
 
 ### CARREGAR UM ARQUIVO .XLSX OU .CSV E OBTER INFORMAÇÕES GERAIS
 
-| Expressão | Ação | 
-| --- | --- |
-| var_df = pd.read_csv(‘arquivo.csv’) | Carregar arquivo .csv |
-| var_df = pd.read_excel(‘arquivo.xlsx’) | Carregar arquivo .xlsx |
-| var_df.head() | Mostrar n linhas do arquivo (padrão n = 5) |
-| var_df.tail() | Mostrar n últimas linhas do arquivo (padrão n = 5) |
-| var_df.shape | Quantidade de linhas e colunas (tupla) |
-| var_df.info() | Informações gerais como quantidade de dados não-nulos, tipos dos dados e memória ocupada |
+ Expressão | Ação 
+ --- | --- 
+ var_df = pd.read_csv(‘arquivo.csv’) | Carregar arquivo .csv 
+ var_df = pd.read_excel(‘arquivo.xlsx’) | Carregar arquivo .xlsx 
+ var_df.head() | Mostrar n linhas do arquivo (padrão n = 5) 
+ var_df.tail() | Mostrar n últimas linhas do arquivo (padrão n = 5) 
+ var_df.shape | Quantidade de linhas e colunas (tupla) 
+ var_df.info() | Informações gerais como quantidade de dados não-nulos, tipos dos dados e memória ocupada 
 
 Observação:
 * read_csv: parâmetro index_col=0 exclui a coluna criada para index dos elementos.
