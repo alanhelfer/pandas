@@ -1,4 +1,5 @@
 Site: https://alanhelfer.github.io/pandas/
+Editar: https://github.com/alanhelfer/pandas/edit/gh-pages/index.md
 Estilo: https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open
 
 ### CARREGAR UM ARQUIVO .XLSX OU .CSV E OBTER INFORMAÇÕES GERAIS
@@ -18,11 +19,18 @@ Observação:
 ### Extração de dados estatísticos das colunas com valores numéricos:
 
  Expressão | Ação 
- --- | --- 
+ --- | ---
+var_df.min() | Valor mínimo de cada coluna do Data Frame
+var_df.max() | Valor máximo de cada coluna do Data Frame
+var_df.mean() | Valor médio de cada coluna do Data Frame
+var_df.median() | Mediana de cada coluna do Data Frame
 var_df.describe() | Média, desvio padrão, mínimo, máximo e percentis por coluna numérica em Data Frame  
 var_df.isna().sum() | Quantidade de elementos nulos (missing) por coluna 
 var_df.isna().mean() | Média de elementos nulos (missing) por coluna 
 var_df[‘nome_col’].value_counts() | Quantidade de vezes que cada dado aparece na coluna 
+
+Observação:
+* var_df.isnull().sum() equivale a var_df.isna().sum() porque Data Frame do Pandas é baseado no Data Frame em R
 
 ### Acessar elementos específicos:
 
@@ -66,6 +74,10 @@ Observação:
 ~~~
 var_df.loc[var_df[‘Nome’] == ‘Alan’]
 ~~~
+ou uma função qualquer:
+~~~
+var_df.loc[pd.isnull(var_df[‘Idade’])] 
+~~~
 
 ### Alteração/exclusão de valores/informações no Data Frame
 
@@ -77,6 +89,12 @@ var_df.dropna() | Excluir linha que contenha qualquer valor nulo
 var_df.fillna(‘termo_incluso’) | Substituir dados faltantes por termo_incluso 
 
 Observações:
+
+* var_df.drop(): na exclusão de uma linha usando estrutura condicional é necessário indicar o seu index com o método index(). Por exemplo:
+
+~~~
+var_df.drop(var_df[var_df[‘age’] < 0 ].index, axis = 0)
+~~~
 
 * É possível especificar as colunas para análise utilizando var_df.[‘nome_coluna’]. Por exemplo:
 
@@ -92,6 +110,47 @@ dados[‘Age’].fillna(dados[‘Age’].mean())
 var_df.X(…, inplace = True) 
 ~~~
 
-Substituir dados faltantes da coluna por novo_dado
+Alguns dos métodos em que o parâmetro é aplicado: 
+~~~
+drop() dropna() fillna() query() rename() reset_index() sort_index() sort_values()
+~~~
 
-Alguns dos métodos em que o parâmetro é aplicado: drop() dropna() fillna() query() rename() reset_index() sort_index() sort_values()
+#### Alteração/exclusão de valores/informações no Data Frame com sobrescrita
+
+O sinal de igual (lê-se recebe) é válido com as funções
+
+ Expressão | Ação
+ --- | ---
+var_df[‘nome_col’] = novo_dado | Todos os elementos da coluna nome_col passam a ser novo_dado
+var_df.loc[‘label_linha_n’] = novo_dado | Todos os elementos da linha label_linha_n (label, valor numérico ou condição) recebem novo_dado
+var_df.loc[‘label_linha_n’, ‘nome_col’] = novo_dado | Elementos da linha label_linha_n (label, valor numérico ou condição) e coluna nome_col recebe novo_dado
+
+#### Os operadores condicionais são bitwise, ou seja, &, | e ~ ao invés de and, or e not, respectivamente como é o padrão do Python.
+
+#### Adição de linhas ou colunas no Data Frame
+
+Criação da coluna Target no Data Frame dados a partir do valor na tabela Risk. Se houver bad nela o valor em Target é 1, e 0 caso contrário.
+~~~  
+dados["Target"] = np.where(df["Risk"] == "bad", 1, 0)
+~~~
+
+
+É comum queremos aplicar uma função qualquer aos dados, ou à parte deles, neste caso o pandas fornece o método .apply. Por exemplo, para deixar os nomes dos bairros como apenas as suas três primeiras letras:
+~~~
+df["bairro"].apply(lambda x: x[:3])
+~~~
+
+Agrupamento
+~~~
+df.groupby("Sex")["Age", "Credit amount", "Duration"].mean()
+~~~
+
+Extrair a média da idade, quantidade de crédito e duração separados por Sexo. Observe que 
+
+Visualização de dados também é possível no Pandas, embora o recomendado seja usar diretamente o matplotlib ou ainda, para visualização estatística, o seaborn. Tanto Series como DataFrame possuem um método .plot():
+
+ Expressão | Ação
+ --- | ---
+var_df[‘coluna’].plot.hist(bins = x) var_df.hist(column = ‘coluna’, bins = x) | Histograma de ‘coluna’ com x barras (padrão x = 10)
+var_df[‘coluna’].value_counts().plot.bar() | Gráfico com barras (padrão verticais, horizontais se barh) dos valores de coluna
+var_df.plot.scatter(x = ‘coluna_1’, y = ‘coluna_2’) | Gráfico de dispersão relacionando coluna_1 e coluna_2
