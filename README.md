@@ -1,4 +1,4 @@
 # pandas
-Pandas Machine Learning Notes
+Machine Learning - Pandas Notes
 
-Tentando 1, 2, 3
+[Site](https://alanhelfer.github.io/pandas/) [Edit](https://github.com/alanhelfer/pandas/edit/gh-pages/index.md)
